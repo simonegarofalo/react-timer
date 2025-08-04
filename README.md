@@ -1,4 +1,4 @@
-![Timer App Demo](/react-timer.gif)
+![Timer App Demo](.assets/react-timer.gif)
 
 # React Timer
 
