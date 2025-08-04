@@ -68,11 +68,9 @@ src/
 
 - useEffect watches the isRunning flag:
 
-1. Starts the timer if isRunning is true and no interval is active
-
-2. Clears the timer when isRunning is false
-
-3. Ensures cleanup when the component unmounts
+  - Starts the timer if isRunning is true and no interval is active
+  - Clears the timer when isRunning is false
+  - Ensures cleanup when the component unmounts
 
 ---
 
