@@ -1,3 +1,5 @@
+![Timer App Demo](/react-timer.gif.gif)
+
 # React Timer
 
 A simple **React Timer** app built with the specific goal of exploring key React concepts:
