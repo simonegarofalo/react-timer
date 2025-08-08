@@ -8,7 +8,7 @@ function App() {
   const [count, setCount] = useState(0);
   // State to control whether the timer is running
   const [isRunning, setIsRunning] = useState(false);
-
+  // Stores the interval ID to prevent duplication
   const intervalRef = useRef(null);
 
   useEffect(() => {
@@ -17,23 +17,23 @@ function App() {
       if (intervalRef.current !== null) return;
       // Set up the interval to increment count every second
       intervalRef.current = setInterval(() => {
-        setCount((prev) => prev + 1);
-      }, 1000);
+        setCount((prev) => prev + 0.001);
+      }, 1);
     } else {
       // If the timer is paused or reset, clear the interval
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     }
-    // Cleanup(Dependency array): ensures the interval is cleared if isRunning changes
+    // Cleanup function
     return () => {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
     };
-  }, [isRunning]);
+  }, [isRunning]); // Dependency array
 
   return (
     <>
-      <h1>{count}</h1>
+      <h1>{count.toFixed(3)}</h1>
       <div className="button-wrapper">
         <button onClick={() => setIsRunning(true)}>Start</button>
         <button onClick={() => setIsRunning(false)}>Pause</button>
