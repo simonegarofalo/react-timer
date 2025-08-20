@@ -4,7 +4,20 @@
   padding: 2rem;
   text-align: center;
 }
+.timer-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+.athlete-avatar {
+  width: 3rem;
+  border-radius: 100%;
+}
 .button-wrapper {
+  width: 100%;
   display: flex;
   gap: 1rem;
 }
