@@ -1,6 +1,9 @@
+import { Link } from "react-router";
 import { DEFAULT_ATHLETE } from "/data/athletes.js";
 
 import { useState, useEffect, useRef } from "react";
+
+import openNew from "/assets/icons/open-new.svg";
 
 function formatTime(ms) {
   const minutes = Math.floor(ms / 60000);
@@ -26,7 +29,6 @@ function Timer({ athlete = DEFAULT_ATHLETE, ...props }) {
 
   useEffect(() => {
     if (isRunning) {
-      // Seleziona l'istante iniziale se non esiste
       if (startTimeRef.current === null) {
         startTimeRef.current = Date.now();
       }
@@ -35,7 +37,7 @@ function Timer({ athlete = DEFAULT_ATHLETE, ...props }) {
         setElapsed(
           Date.now() - startTimeRef.current + accumulatedTimeRef.current
         );
-      }, 50);
+      }, 80);
     } else {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
@@ -49,8 +51,16 @@ function Timer({ athlete = DEFAULT_ATHLETE, ...props }) {
 
   return (
     <div className="timer-wrapper">
-      <h3>{athlete.name}</h3>
       <img src={athlete.avatar} alt={athlete.name} className="athlete-avatar" />
+      <div>
+        <h3>{athlete.name}</h3>
+        <Link to={`/athletes/${athlete.slug}`}>
+          <div className="view-profile-wrapper">
+            <p className="view-profile">View profile</p>
+            <img src={openNew} alt="open-new" className="open-new-icon" />
+          </div>
+        </Link>
+      </div>
       <h4>{formatTime(elapsed)}</h4>
       <div className="button-wrapper">
         <button
@@ -61,7 +71,6 @@ function Timer({ athlete = DEFAULT_ATHLETE, ...props }) {
         >
           Start
         </button>
-
         <button
           onClick={() => {
             setIsRunning(false);
@@ -71,7 +80,6 @@ function Timer({ athlete = DEFAULT_ATHLETE, ...props }) {
         >
           Pause
         </button>
-
         <button
           onClick={() => {
             setElapsed(0);

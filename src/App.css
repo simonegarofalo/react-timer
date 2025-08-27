@@ -1,24 +1,49 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+  background-color: #ffffff;
 }
+
 .timer-container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 3rem;
+  gap: 1rem;
+  padding: 0 1rem;
+}
+.timer-wrapper {
+  background-color: #d0d2fc;
+  border-radius: 8px;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 33%;
+  gap: 0.5rem;
 }
 .athlete-avatar {
   width: 3rem;
   border-radius: 100%;
 }
+.timer-wrapper p {
+  font-size: 1rem;
+  color: #a2a2a2;
+  font-weight: 500;
+}
+.view-profile-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+.open-new-icon {
+  width: 1rem;
+}
 .button-wrapper {
   width: 100%;
   display: flex;
+  justify-content: center;
   gap: 1rem;
 }
 button {
@@ -28,27 +53,30 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #ffffff;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
   border-color: #646cff;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.athlete-card {
+  text-align: start;
+  margin: 3rem 0;
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.athlete-card h3 {
+  margin-left: 0.5rem;
+}
+.card-data {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.card-data img {
+  width: 120px;
+  height: 120px;
+}
+.stats-list {
+  margin-left: 0.5rem;
 }
