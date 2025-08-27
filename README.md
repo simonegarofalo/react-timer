@@ -1,4 +1,4 @@
-![Timer App Demo](./assets/react-timer.gif)
+![Timer App Demo](./assets/react-learning.gif)
 
 # React Timer
 
