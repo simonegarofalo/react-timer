@@ -12,7 +12,7 @@ export const ATHLETES = [
     slug: "simone-garofalo",
     stats: {
       age: "29",
-      height: "1,83",
+      height: "1,82",
       weight: "74kg",
       region: "Lombardia",
     },
